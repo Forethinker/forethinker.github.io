@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>algorithms - Forethinker</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <meta name="author" content="forethinker" />
+    <meta name="keywords" content="algorithms" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Forethinker" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Forethinker"/>
+        <meta property="og:url" content="https://forethinker.github.io"/>
+        <meta property="og:description" content="Forethinker"/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://forethinker.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://forethinker.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://forethinker.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://forethinker.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://forethinker.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="https://forethinker.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Forethinker ATOM Feed"/>
+
+        <link href="https://forethinker.github.io/feeds/algorithms.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Forethinker algorithms ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://forethinker.github.io/" class="navbar-brand">
+Forethinker            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="https://forethinker.github.io/category/algorithms.html">Algorithms</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="https://forethinker.github.io/k-closest-points-to-origin.html">K Closest Points to Origin | Medium</a></h2>
+                <div class="summary"><p><a href="https://leetcode.com/problems/k-closest-points-to-origin/">Leetcode</a></p>
+<h3>Intuition:</h3>
+<ul>
+<li>Calculate the distance, sort it then return the first K element</li>
+</ul>
+<h3>Gotchas:</h3>
+<ul>
+<li>square root not necessary</li>
+</ul>
+<h3>Base cases:</h3>
+<ul>
+<li>None</li>
+</ul>
+<h3>Solution:</h3>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">kClosest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">K</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+        <span class="n">points</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">points</span><span class="p">[:</span><span class="n">K</span><span class="p">]</span>
+
+
+<span class="c1"># Using </span>
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">kClosest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">K</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+        <span class="n">heap</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">p</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">K</span><span class="p">:</span>
+                <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">d</span><span class="p">,</span><span class="n">p</span> <span class="ow">in</span> <span class="n">heap</span><span class="p">]</span>
+</pre></div>
+
+
+<h3>Complexity Analysis:</h3>
+<p>O(N …</p>
+                    <a class="btn btn-default btn-xs" href="https://forethinker.github.io/k-closest-points-to-origin.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://forethinker.github.io/remove-invalid-parentheses.html">Remove Invalid Parentheses | Hard</a></h2>
+                <div class="summary"><p><a href="https://leetcode.com/problems/remove-invalid-parentheses/">Leetcode</a></p>
+<h3>Intuition:</h3>
+<div class="highlight"><pre><span></span>- Use DFS to recursively either remove the character or just continue.
+</pre></div>
+
+
+<h3>Gotchas:</h3>
+<div class="highlight"><pre><span></span>- The program expects empty string in the answer if there are no other matches
+- non-parenthesis characters is like a no-op character, that moves the iterator without doing anything.
+- The answer needs to be in set to avoid duplicates
+- left parenthesis(L) has a preferential consideration over right parenthesis(R) since R is an invariant if there is more R than L at any given position.
+</pre></div>
+
+
+<h3>Base case:</h3>
+<div class="highlight"><pre><span></span>- The resulting answer should have a matching number of parenthesis.
+- Iteration ends when the iteration reaches the end of …</pre></div>
+                    <a class="btn btn-default btn-xs" href="https://forethinker.github.io/remove-invalid-parentheses.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://forethinker.github.io/minimum-remove-to-make-valid-parentheses.html">Minimum Remove to Make Valid Parentheses | Medium</a></h2>
+                <div class="summary"><p><a href="https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/">Leetcode</a></p>
+<h3>Intuition:</h3>
+<ul>
+<li>Calculate the invariant (out of place) parentheses first and then remove them.</li>
+</ul>
+<h3>Gotchas:</h3>
+<ul>
+<li>Unlike getting all possibilities, this doesn't require recursion / search / stack or queue.</li>
+<li>Trying to solve by looping in sequence doesn't work. Right parentheses can be removed in sequence, but Left parentheses are efficiently removed in reverse.</li>
+<li>Character can be set to "" instead of creating a new string</li>
+</ul>
+<h3>Base cases:</h3>
+<ul>
+<li>None for loops.</li>
+<li>Splitting the string into a char list makes it easier to "remove" a character</li>
+</ul>
+<h3>Solution:</h3>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">minRemoveToMakeValid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+        <span class="n">left_rem</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span> <span class="p">]</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="nb">len …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://forethinker.github.io/minimum-remove-to-make-valid-parentheses.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://forethinker.github.io/product-of-array-except-self.html">Product of Array Except Self | Medium</a></h2>
+                <div class="summary"><p><a href="https://leetcode.com/problems/product-of-array-except-self/">Leetcode</a></p>
+<h3>Intuition:</h3>
+<ul>
+<li>Create a left list that should be cumulative of [0:i-1] for given i</li>
+<li>Create a right list that should be cumulative of [i+1:-1] for a given i</li>
+<li>return list of left[i] * right[~i]</li>
+</ul>
+<h3>Gotchas:</h3>
+<ul>
+<li>Either the multiplied sum needs to be applied at the proper location AND iteration needs to exclude the last element</li>
+<li>or there is implied 1 multiplication due to the shift in the iteration</li>
+</ul>
+<h3>Base cases:</h3>
+<ul>
+<li>Initialize the answer as list of 1</li>
+<li>Or initialize the left and right accumulation list with implied 1</li>
+</ul>
+<h3>Solution (Optimized, prealloc):</h3>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://forethinker.github.io/product-of-array-except-self.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://forethinker.github.io/valid-palindrome-ii.html">Valid Palindrome II</a></h2>
+                <div class="summary"><p>https://leetcode.com/problems/valid-palindrome-ii/</p>
+<h3>Intuition:</h3>
+<ul>
+<li>Set two iterators from the beginning and the end and make adjustments </li>
+</ul>
+<h3>Gotchas:</h3>
+<ul>
+<li>the deletion might be needed from the either side of the iteration. So from the point of the mismatch, two verifications are needed</li>
+<li>slicing the char character may be tricky</li>
+</ul>
+<h3>Base cases:</h3>
+<ul>
+<li>None</li>
+</ul>
+<h3>Solution:</h3>
+<div class="highlight"><pre><span></span><span class="s s-Atom">class</span> <span class="nv">Solution</span><span class="s s-Atom">:</span>
+    <span class="s s-Atom">def</span> <span class="nf">validPalindrome</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="nn">s</span><span class="p">:</span> <span class="s s-Atom">str</span><span class="p">)</span> <span class="s s-Atom">-&gt;</span> <span class="nn">bool</span><span class="p">:</span>
+        <span class="s s-Atom">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="s s-Atom">j</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="s s-Atom">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="s s-Atom">used</span> <span class="o">=</span> <span class="nv">False</span>
+        <span class="s s-Atom">while</span> <span class="s s-Atom">i</span> <span class="s s-Atom">&lt;=</span> <span class="nn">j</span><span class="p">:</span>
+            <span class="s s-Atom">if</span> <span class="o">not</span> <span class="s s-Atom">s</span><span class="p">[</span><span class="s s-Atom">i</span><span class="p">]</span> <span class="o">==</span> <span class="s s-Atom">s</span><span class="p">[</span><span class="s s-Atom">j</span><span class="p">]</span><span class="s s-Atom">:</span>
+                <span class="s s-Atom">return</span> <span class="s s-Atom">s</span><span class="p">[</span><span class="nn">i</span><span class="p">:</span><span class="s s-Atom">j</span><span class="p">]</span> <span class="o">==</span> <span class="s s-Atom">s</span><span class="p">[</span><span class="nn">i</span><span class="p">:</span><span class="s s-Atom">j</span><span class="p">][</span><span class="s s-Atom">::-</span><span class="mi">1</span><span class="p">]</span> <span class="s s-Atom">or</span> <span class="s s-Atom">s</span><span class="p">[</span><span class="s s-Atom">i</span><span class="o">+</span><span class="mi">1</span><span class="s s-Atom">:j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s s-Atom">s</span><span class="p">[</span><span class="s s-Atom">i</span><span class="o">+</span><span class="mi">1</span><span class="s s-Atom">:j</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="s s-Atom">::-</span><span class="mi">1</span><span class="p">]</span> <span class="s s-Atom">#</span> <span class="s s-Atom">indexing</span>
+            <span class="s s-Atom">i …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://forethinker.github.io/valid-palindrome-ii.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://forethinker.github.io/verifying-an-alien-dictionary.html">Verifying an Alien Dictionary | Easy</a></h2>
+                <div class="summary"><p><a href="https://leetcode.com/problems/verifying-an-alien-dictionary/">Leetcode</a></p>
+<h2>Intuition:</h2>
+<ul>
+<li>Store the alien alphabet in a dictionary so that lookup can be in O(1)</li>
+</ul>
+<h2>Gotchas</h2>
+<ul>
+<li>Not all characters need to be verified, only when the characters are equal </li>
+<li>The words might not be of the same length</li>
+</ul>
+<h2>Base case:</h2>
+<ul>
+<li>at least two words to be given</li>
+</ul>
+<h2>Solution:</h2>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isAlienSorted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">words</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">order</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">order</span> <span class="o">=</span> <span class="p">{</span> <span class="n">v</span><span class="p">:</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="p">}</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">def</span> <span class="nf">compareWords</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">):</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">w1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">w2</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">order</span><span class="p">[</span><span class="n">w1</span><span class="p">[</span><span class="n">i …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://forethinker.github.io/verifying-an-alien-dictionary.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 forethinker
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://forethinker.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://forethinker.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://forethinker.github.io/theme/js/respond.min.js"></script>
+
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'forethinker'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-53043426-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
